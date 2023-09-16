@@ -10,36 +10,35 @@
   <body>
     <h1>Todo App</h1>
     <div class="filter">
-      <div class="radioBtn">
+      <div class="radio-btn">
         <label for="all">All</label>
-        <input type="radio" name="All" id="all" />
+        <input type="radio" name=filter" id="all" />
       </div>
-      <div class="radioBtn">
+      <div class="radio-btn">
         <label for="open">Open</label>
-        <input type="radio" name="Open" id="open" />
+        <input type="radio" name="filter" id="open" />
       </div>
-      <div class="radioBtn">
+      <div class="radio-btn">
         <label for="done">Done</label>
-        <input type="radio" name="Done" id="done" />
+        <input type="radio" name="filter" id="done" />
       </div>
     </div>
 
-    <div id="removeBtn">
+    <div id="remove-btn">
       <button>Remove done Todos</button>
     </div>
 
-    <form id="toDoInput">
+    <form id="to-do-input">
       <input
         type="text"
-        name="addTodo"
+        name="to-do-description"
         placeholder="Add Your ToDos"
-        id="addTodo"
+        id="to-do-description"
       />
-      <label for="addTodo"></label>
-      <input type="submit" value="Add" id="addBtn" />
-      <label for="addBtn"></label>
+      <label for="to-do-description"></label>
+      <button type="submit" id="add-btn">Add</button>
     </form>
-    <ul></ul>
-    <script type="module" src="script.js"></script>
+    <ul class="to-do-list"></ul>
+    <script src="script.js"></script>
   </body>
 </html>
