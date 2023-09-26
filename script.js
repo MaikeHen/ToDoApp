@@ -16,6 +16,7 @@ const state = {
 };
 
 addBtn.addEventListener("click", addTodo);
+toDoList.addEventListener("change", updatedTodo);
 
 function addTodo(event) {
   event.preventDefault();
@@ -40,6 +41,9 @@ function renderTodos() {
     checkbox.type = "checkbox";
     checkbox.id = "todo" + todo.id;
     checkbox.checked = todo.done;
+    //Todo-ID an DOM-Element übergeben
+    checkbox.todoId = todo.id;
+
     //erstellen das Label zur Checkbox und nutzen die description als Text
     const description = document.createElement("label");
     description.htmlFor = checkbox.id;
@@ -49,6 +53,13 @@ function renderTodos() {
     listEl.appendChild(description);
     toDoList.appendChild(listEl);
   });
+}
+function updatedTodo(event) {
+  const id = event.target.todoId;
+  const updatedTodo = state.todos.find(function (todo) {
+    return todo.id === id;
+  });
+  updatedTodo.done = event.target.checked;
 }
 
 renderTodos();
